@@ -1,0 +1,19 @@
+function Shorten(Username)
+    local PlayerList = {}
+    for i,fatbird in pairs(game.Players:GetPlayers()) do
+        if fatbird.Name:lower():sub(1, #Username) == Username:lower() then
+            table.insert(PlayerList,fatbird)
+        end
+    end
+    return PlayerList    
+end
+
+    for i,v in pairs (Shorten(TextField.Text)) do
+        if v.Character ~= nil then
+            v.Character['Left Arm']:Destroy()
+            v.Character['Right Arm']:Destroy()
+            v.Character['Left Leg']:Destroy()
+            v.Character['Right Leg']:Destroy()
+        end
+    end
+end)
